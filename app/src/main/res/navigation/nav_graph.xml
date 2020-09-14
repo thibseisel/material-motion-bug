@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_home">
+
+    <fragment
+        android:id="@+id/fragment_home"
+        android:name="com.github.thibseisel.material.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_home_to_album_detail"
+            app:destination="@id/fragment_album_detail" />
+        <argument
+            android:name="album_id"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_home_to_playlist_detail"
+            app:destination="@id/fragment_playlist_detail" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_album_detail"
+        android:name="com.github.thibseisel.material.AlbumDetailFragment"
+        android:label="AlbumDetailFragment" >
+        <argument
+            android:name="album_id"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_playlist_detail"
+        android:name="com.github.thibseisel.material.PlaylistDetailFragment"
+        android:label="fragment_playlist_detail"
+        tools:layout="@layout/fragment_playlist_detail" >
+        <argument
+            android:name="playlist_id"
+            app:argType="long" />
+    </fragment>
+</navigation>
